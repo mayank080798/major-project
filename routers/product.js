@@ -204,6 +204,7 @@ router.get('/hello',async (request,response)=>{
     //     'specifications.Dimensions':'17.5 x 42 x 39.5cm',
     //     'data':'When you think about servers, Fujitsu is probably not the first vendor which springs to mind. And yet, the Japanese manufacturer is one of the very few (if not the only one) that can claim to be involved in anything from SMB servers to, well, supercomputers. The TX1310 is its entry-level, SMB-focused server and comes with some pretty solid credentials plus an unmatched, industry-leading reliability guarantee. If your server breaks down within the first year of purchase, not only will Fujitsu fix or replace it, the company will also refund you the amount you paid for the server.Like pretty much everyone at this end of the market, it is designed to run silently 24/7 and offers RAID 0/1/10 but not 5. This model incudes an Intel Xeon E3-1226 v3, two 1TB hard drives and 16GB of RAM. We like the fact that it comes with an optical drive and has two Gigabit Ethernet ports for redundancy. With four DIMM slots and four storage bays, this server supports up to 32TB of storage and 32GB of memory.'
     // });
+    
     await product.save();
     console.log('Saved');
     response.send('Hello');

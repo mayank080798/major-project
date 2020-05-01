@@ -5,7 +5,7 @@ module.exports={
     googleAPI:{
         CLIENT_ID       :'243977226705-3jsva9bjc6ob2edt5eb59jiv32ld2dr4.apps.googleusercontent.com',
         CLIENT_SECRET   :'1V7cmNggNmk_zD6oBH8ROXkz',
-        CALLBACK_URL    :'/user/auth/google/callback',
+        CALLBACK_URL    :'https://major-project-m4.herokuapp.com/user/auth/google/callback',
     },
     session:{
         COOKIE_SECRET   : 'mayank lal',
