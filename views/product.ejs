@@ -1,0 +1,114 @@
+<a href="https://icons8.com/icon/87472/v-bucks">V Bucks icon by Icons8</a>
+
+<style>
+  nav{
+    color: black;
+  }
+</style>
+<nav class="navbar navbar-expand-lg navbar-light  mdb-color lighten-3 fixed-top">  
+  <a class="navbar-brand" style="color: black;">
+  <%if(user){%>
+    <%if(user.google.token){%>
+      <img src="<%=user.google.thumbnail%>" width="30" height="35" alt="logo" class="rounded-circle">
+    <%}else{%>
+      <img src="https://img.icons8.com/ios-filled/35/000000/v-bucks.png"/>
+    <%}%>
+  <%}else{%>
+      <img src="https://img.icons8.com/ios-filled/35/000000/v-bucks.png"/>
+  <%}%>
+  Vintage Store</a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/product">Products</a></li>
+        <% if(user){ %>
+        <li class="nav-item "><a class="nav-link" href="/user/logout">Logout<span class="sr-only"></span></a></li>
+        <%}else{%>
+        <li class="nav-item"><a class="nav-link" href="/user/login">Login</a></li>
+        <%}%>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/shopping-cart">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
+            <% if (bucket>0){%>
+              <span class="badge badge-pill badge-secondary"><%=bucket%></span>
+            <%}%>
+          </a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<div class="container " style="padding-top:15vh">
+  <h1 style=" margin-top: 6%; color: purple; text-align: center; font-size: 3.5vw; " >Search Products</h1>
+  
+</div>
+
+<div class="container" >
+  <h1 style=" text-decoration: underline; margin-top: 6%; color: purple; text-align: left; font-size: 3.5vw; " >Total Products : 10</h1>
+  <% if(records.length>0){
+      records.forEach((data)=>{
+  %>
+    <div class="card booking-card" style="margin-bottom: 30px;">
+
+      <div class="view overlay" style="padding-top:4vh;">
+        <img class="card-img-top" src="<%= data.thumbnail%>" alt="Card image cap">
+        <a href="#!">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <div class="card-body"  >
+        <h4 class="card-title font-weight-bold"><a><%=data.name%></a></h4>
+        <!-- <p class="mb-2">$ • American, Restaurant</p> -->
+        <hr class="my-4">
+        <a href="/product/info/<%=data.id%>" class="btn btn-purple">Details</a>
+
+      </div>
+
+    </div>
+  <%
+      })
+  } %>
+</div>
+
+<div class="container" >
+  
+  <% if (pages > 0) { %>
+    <ul style="justify-content: center;" class="pagination pagination-lg pg-purple">
+        <% if (current == 1) { %>
+            <li class="page-item disabled"><a class="page-link" ><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+        <% } else { %>
+            <li class="page-item" ><a class="page-link" href="/product/1"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+        <% } %>
+        <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+        <% if (i !== 1) { %>
+            <li class="page-item disabled"><a class="page-link" >...</a></li>
+        <% } %>
+        <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+            <% if (i == current) { %>
+                <li class="page-item active"><a class="page-link" ><%= i %></a></li>
+            <% } else { %>
+                <li class="page-item" ><a class="page-link" href="/product/<%= i %>"><%= i %></a></li>
+            <% } %>
+            <% if (i == Number(current) + 4 && i < pages) { %>
+                <li class="page-item disabled"><a class="page-link" >...</a></li>
+            <% } %>
+        <% } %>
+        <% if (current == pages) { %>
+            <li class="page-item disabled"><a class="page-link" ><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+        <% } else { %>
+            <li class="page-item" ><a class="page-link" href="/product/<%= pages %>"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+        <% } %>
+    </ul>
+<% } %>
+</div>
+<div>
+  <a href="#" class="to-top">
+    <i class="fa fa-angle-double-up text-muted"></i>
+  </a>
+</div>

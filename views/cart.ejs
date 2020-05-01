@@ -1,0 +1,109 @@
+<a href="https://icons8.com/icon/87472/v-bucks">V Bucks icon by Icons8</a>
+
+<style>
+  /* html, .container{
+    background-color: black;
+    color:white;
+  }  */
+  .container-shopping {
+    padding : 5% 0;
+  }
+  /* .container-shopping-empty{
+    position:fixed;
+    bottom:20%;
+  } */
+  .list-group li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-bottom:1.5px solid rgb(106, 14, 148);
+    /* color:white;
+    background-color: rgb(58, 55, 55); */
+  }
+</style>
+
+ 
+<nav class="navbar navbar-expand-lg navbar-light mdb-color lighten-3 fixed-top">  <a class="navbar-brand" style="color: black;">
+  <%if(user){%>
+    <%if (user.google.id){%>
+      <img src="<%=user.google.thumbnail%>" width="30" height="35" alt="logo" class="rounded-circle">
+    <%}else{%>
+      <img src="https://img.icons8.com/ios-filled/35/000000/v-bucks.png"/>
+    <%}%>
+  <%}else{%>
+    <img src="https://img.icons8.com/ios-filled/35/000000/v-bucks.png"/>
+  <%}%>
+  Vintage Store</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item "><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/product">Products</a></li>
+        <% if(user){ %>
+        <li class="nav-item "><a class="nav-link" href="/user/logout">Logout<span class="sr-only"></span></a></li>
+        <%}else{%>
+        <li class="nav-item"><a class="nav-link" href="/user/login">Login</a></li>
+        <%}%>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/shopping-cart">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
+            <% if (bucket>0){%>
+              <span class="badge badge-pill badge-secondary"><%=bucket%></span>
+            <%}%>
+          </a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<% if(products){ %>
+  
+  <div class="container  container-shopping" style="padding-top: 25vh;">
+    <h2 class="h2 text-center">CART</h2>
+    <div class="row" style="padding-top: 3vh;">
+      <div class="col-sm-6 col-md-6 col-md-offset-3 col sm-offset-3">
+        <ul class="list-group">
+          <% products.forEach((product)=>{ %>
+            <li class="list-group-item">
+              <strong><%= product.item.name %></strong>
+              <div class="btn-group">
+                <button class="btn btn-purple btn-sm dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <a href="/user/reduce/<%=product.item._id%>" class="dropdown-item">Reduce</a>
+                  <div class="dropdown-divider"></div>
+                  <a href="/user/remove/<%=product.item._id%>" class="dropdown-item">Remove</a>
+                </ul>
+              </div>
+              <span class="badge badge-pill badge-secondary"><%= product.qty %></span>
+              
+            </li>
+            <br><br>
+          <%})%>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  <div class="container container-shopping">
+    <div class="row ">
+      <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3 btn-checkout">
+        <a href="/order"><button class="btn btn-block btn-purple" style="border-radius: 25px;">Checkout</button></a>
+      </div>
+    </div>
+  </div>
+<%}else{%>
+  <div class="container container-shopping-empty text-center" style="padding: 30vh 0;" >
+    <div class="row ">
+      <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <h2 class="h2">EMPTY CART</h2>
+        <a href="/"><button class="btn btn-block btn-purple" style="border-radius: 25px; margin-top: 3vh;">FILL IT</button></a>
+      </div>
+    </div>
+  </div>
+
+<%}%>

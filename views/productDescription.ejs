@@ -1,0 +1,90 @@
+<a href="https://icons8.com/icon/87472/v-bucks">V Bucks icon by Icons8</a>
+
+<nav class="navbar navbar-expand-lg navbar-light  mdb-color lighten-3 fixed-top">  
+  <a class="navbar-brand" style="color: black;">
+  <%if(user){%>
+    <%if(user.google.token){%>
+      <img src="<%=user.google.thumbnail%>" width="30" height="35" alt="logo" class="rounded-circle">
+    <%}else{%>
+      <img src="https://img.icons8.com/ios-filled/35/000000/v-bucks.png"/>
+    <%}%>
+  <%}else{%>
+      <img src="https://img.icons8.com/ios-filled/35/000000/v-bucks.png"/>
+  <%}%>
+  Vintage Store</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/product">Products</a></li>
+        <% if(user){ %>
+        <li class="nav-item "><a class="nav-link" href="/user/logout">Logout<span class="sr-only"></span></a></li>
+        <%}else{%>
+        <li class="nav-item"><a class="nav-link" href="/user/login">Login</a></li>
+        <%}%>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/shopping-cart">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart
+            <% if (bucket>0){%>
+              <span class="badge badge-pill badge-secondary"><%=bucket%></span>
+            <%}%>
+          </a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<div class="container " style="padding-top: 15vh;">
+  <div style="margin-top: 6%;" class="card mb-3">
+    <img style=" border:0; box-shadow: none!important; height: 200px; width: 100%; display: block;" src="<%=record.thumbnail%>" alt="Card image">
+    
+  </div>
+</div>
+<div class="container">
+  <h1 class="h2 text-muted " ><%= record.name%></h1>
+</div>
+<div style="margin-top: 2vh;" class="container text-justify ">
+  <% keys.forEach((key,index)=>{ if(index>0){ %>
+  <span class="font-weight-bold"><%= key %>:</span><span style="padding-right: 2vh;"><%= record.specifications[key] %>  |</span>
+  <% }}) %>
+</div>
+
+
+<div style="margin-top: 2vh;" class="container" >
+  <div>
+    <span style="font-size:2.5vh; margin-top: 1vh;" class="fa fa-plus-circle text-secondary"></span>
+    <span style="font-size:2.5vh; margin: 1vh;" ><%=record.features.first%></span>
+  </div>
+  <div>
+    <span style="font-size:2.5vh; margin-top: 1vh;" class="fa fa-plus-circle text-secondary"></span>
+    <span style="font-size:2.5vh; margin: 1vh;" ><%=record.features.second%></span>
+  </div>
+  <div>
+    <span style="font-size:2.5vh; margin-top: 1vh;" class="fa fa-minus-circle text-secondary"></span>
+    <span style="font-size:2.5vh; margin: 1vh;" ><%=record.features.third%></span>
+  </div>
+  <% if(record.features.fourth){ %>
+  <div>
+    <span style="font-size:2.5vh; margin-top: 1vh;" class="fa fa-minus-circle text-secondary"></span>
+    <span style="font-size:2.5vh; margin: 1vh;" ><%=record.features.fourth%></span>
+  </div>
+  <%}%>
+</div>
+
+<div style="margin-top: 5vh; text-align: justify; " class="container">
+  <span  class="text-md-center text-justify font-italic" ><%= record.data %></span>
+</div>
+
+<div style="margin:2vh 0;" class="container" >
+  <a href="/user/cart/<%=record.id%>"><button type="button" style="border-radius: 25px;" class="btn btn-block btn-purple">ADD TO CART</button></a>
+  
+</div>
+<div>
+  <a href="#" class="to-top">
+    <i class="fa fa-angle-double-up text-muted"></i>
+  </a>
+</div>
