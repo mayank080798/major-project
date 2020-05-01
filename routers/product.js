@@ -31,6 +31,7 @@ router.get('/',async (request,response)=>{
 router.get('/hello',async (request,response)=>{
     // const product = new Products({
     //     'name':'Dell PowerEdge T30',
+    //     'tagline':'A Xeon dream with plentiful connectivity on offer',
     //     'thumbnail':'https://cdn.mos.cms.futurecdn.net/Vj2VgZBMZv2Ac62LsCqhwa-650-80.jpg.webp',
     //     'features.first':'fast quad-core Xeon processor',
     //     'features.second':'Room for six internal disks',
@@ -47,6 +48,7 @@ router.get('/hello',async (request,response)=>{
 
     // const product = new Products({
     //     'name':'Dell PowerEdge T20 [barebones]',
+    //     'tagline' : 'Shows you how cheap a barebones server can get',
     //     'thumbnail':'https://cdn.mos.cms.futurecdn.net/1abd303eaaa3a898c0720121b011750e-970-80.jpg.webp',
     //     'features.first':'Very cheap',
     //     'features.second':'Compact mini-tower with easy access to internals',
@@ -65,6 +67,7 @@ router.get('/hello',async (request,response)=>{
 
     // const product = new Products({
     //     'name':'Lenovo ThinkServer TS150',
+    //     'tagline':'A Tower server offering quite potent performance',
     //     'thumbnail':'https://cdn.mos.cms.futurecdn.net/23iHswRrvedtNtZhSEhEvS-650-80.jpg.webp',
     //     'features.first':'Most affordable ThinkServer model',
     //     'features.second':'Whisper quiet',
@@ -77,9 +80,11 @@ router.get('/hello',async (request,response)=>{
     //     'specifications.Dimensions':'17.5 x 37.5 x 43cm',
     //     'data':"Lenovo took over IBM's x86 server range back in 2014 and has built on the best of the ThinkServer tradition. The TS150 is now the most affordable of the range and is a 4U enterprise-class server that competes with the Dell T20. It comes with support for RAID 0,1,10 and 5 (via an on-board controller). Like the competition, this one can accommodate up to four 3.5-inch HDDs in total, which means that it can go up to 40TB of storage when loaded with the relevant hard drives. The relatively-recent Intel Xeon E3-1200 v6 processor should be powerful enough for small and medium enterprises.Lenovo also claims that the acoustics of the TS150 are even quieter than a typical library at 26 decibels. As is the case for the competition, you also get an impressive array of ports and connectors: eight USB ports, four PCI/PCI-e slots, three video connectors (including a pair of DisplayPorts), Serial, Gigabit Ethernet and three audio connectors."
     // });
+    
 
     // const product = new Products({
     //     'name':'HPE ProLiant ML350 Gen 10',
+    //     'tagline':'Powerful and versatile',
     //     'thumbnail':'https://cdn.mos.cms.futurecdn.net/UwRbzQt3nsTDhPXY7n6783-650-80.jpg.webp',
     //     'features.first':'Scalable',
     //     'features.second':'Decent design',
@@ -96,6 +101,7 @@ router.get('/hello',async (request,response)=>{
     
     // const product = new Products({
     //     'name':'HP Proliant Microserver Gen8',
+    //     'tagline':'A compact if slightly noisy server',
     //     'thumbnail':'https://cdn.mos.cms.futurecdn.net/27f614bda389b50aa564751ca7bb2a91-650-80.jpg.webp',
     //     'features.first':'Two Gigabit network ports',
     //     'features.second':'Choice of Intel dual-core processors',
@@ -113,6 +119,7 @@ router.get('/hello',async (request,response)=>{
 
     // const product = new Products({
     //     'name':'Lenovo ThinkServer TS460',
+    //     'tagline':'A beefy server that can handle up to eight drives',
     //     'thumbnail':'https://cdn.mos.cms.futurecdn.net/95b241413b6bf5dfb0edb0fa1ba4e603-650-80.jpg.webp',
     //     'features.first':'Impressive performer',
     //     'features.second':'Three-year onsite warranty',
@@ -130,6 +137,7 @@ router.get('/hello',async (request,response)=>{
     
     // const product = new Products({
     //     'name':'HP ProLiant ML350 G9 5U',
+    //     'tagline':'Extremely well-featured server offering plenty of power',
     //     'thumbnail':'https://cdn.mos.cms.futurecdn.net/66eddb01efca33706baa5c077223cfdc-650-80.jpg.webp',
     //     'features.first':'Six-core Xeon CPU',
     //     'features.second':'Three-year onsite NDB warranty',
@@ -144,8 +152,10 @@ router.get('/hello',async (request,response)=>{
     //     'data':"Pitching in the same category as the TS440 is the ML350. This is an expensive piece of kit but just look at the feature list and it actually seems like a very decent deal. Other than the fact that it has a dedicated, integrated graphics card (Matrox G200), it offers a three-year onsite next business day warranty, four Gigabit Ethernet ports and support for 12Gbps SAS (note that it takes only 2.5-inch drives),But there's more – this server runs an Intel Xeon E5-2603 v3 processor (not the usual E3 CPU) and supports two CPUs. The E5 has six cores which makes it particularly well-suited for more taxing tasks. We are also impressed by the amount of memory slots (24) that it has, allowing it to hit 3TB of memory once 128GB LRDIMM roll out. Oh and other than a lockable front door and a storage controller, this server earns brownie points for having dual redundant, hot-swappable 500W PSUs",
     // });
 
+
     // const product = new Products({
-    //     'name':'HP ProLiant ML350 G9 5U',
+    //     'name':'Scan 3XS SER-T25',
+    //     'tagline':'A beast driven by twin Xeon processors',
     //     'thumbnail':'https://cdn.mos.cms.futurecdn.net/281d6b27978b5dbaf0c12770f4a3a675-650-80.jpg.webp',
     //     'features.first':'Compact and quiet',
     //     'features.second':'Very powerful',
@@ -161,7 +171,8 @@ router.get('/hello',async (request,response)=>{
     // });
 
     // const product = new Products({
-    //     'name':'HP ProLiant ML350 G9 5U',
+    //     'name':'Asus TS500',
+    //     'tagline':'A mainstream tower server with flexibility in spades',
     //     'thumbnail':'https://cdn.mos.cms.futurecdn.net/03b7aa642bd2614bd76c4380eff5f12d-650-80.jpg.webp',
     //     'features.first':'Perfect for server and workstation use',
     //     'features.second':'No shortage of power and flexibility',
@@ -176,6 +187,23 @@ router.get('/hello',async (request,response)=>{
     //     'data':"Like Supermicro, Asus is not well known for its servers. Instead, the Taiwanese company, one of the biggest component vendors in the world, is popular for a wide range of consumer products including its motherboards. Its TS500-E8-PS4 is a mainstream pedestal 5U tower server perfectly built for both workstation and server dual use.t features the latest Intel Xeon processor E5-2600 v3 product families, eight DDR4 DIMMs (supporting half a terabyte of RAM), six expansion slots, three 5.25-inch media bays and a single 500W 80 Plus Bronze power supply. There are four 3.5-inch hot-swap SATA/SAS HDD bays which is also upgradable to eight HDD bays for flexible storage requirements.n addition, with Intel's Intelligent Platform Management Interface (IPMI) 2.0-compliant ASMB8-iKVM module in the TS500 you'll be able to monitor, control and manage the server remotely. Other key specs include 10 SATA ports, a DVD writer, eight USB ports, a PS2 port, a VGA one and three Gigabit Ethernet ports. Note that this is a barebones server, but obviously that gives you plenty of flexibility - something this machine offers in spades.",
     // });
 
+    
+    // const product = new Products({
+    //     'name':'Fujitsu Primergy TX1310 M1',
+    //     'tagline':"Fujitsu's reliability guarantee is second to none",
+    //     'thumbnail':'https://cdn.mos.cms.futurecdn.net/0710a595c81cfe9e5c59393106f161b0-970-80.jpg.webp',
+    //     'features.first':'Fantastic guarantee',
+    //     'features.second':'Has an optical drive',
+    //     'features.third':'No RAID 5',
+    //     'features.fourth':"Fujitsu isn't the first brand you'd think of",
+    //     'specifications.CPU':' Intel Xeon E3-1226 v3',
+    //     'specifications.Graphics':'Intel HD Graphics P4600',
+    //     'specifications.RAM':'16GB',
+    //     'specifications.Storage':'2 x 1TB HDD',
+    //     'specifications.Connectivity':'5 x USB 3.0, 2 x Gigabit Ethernet',
+    //     'specifications.Dimensions':'17.5 x 42 x 39.5cm',
+    //     'data':'When you think about servers, Fujitsu is probably not the first vendor which springs to mind. And yet, the Japanese manufacturer is one of the very few (if not the only one) that can claim to be involved in anything from SMB servers to, well, supercomputers. The TX1310 is its entry-level, SMB-focused server and comes with some pretty solid credentials plus an unmatched, industry-leading reliability guarantee. If your server breaks down within the first year of purchase, not only will Fujitsu fix or replace it, the company will also refund you the amount you paid for the server.Like pretty much everyone at this end of the market, it is designed to run silently 24/7 and offers RAID 0/1/10 but not 5. This model incudes an Intel Xeon E3-1226 v3, two 1TB hard drives and 16GB of RAM. We like the fact that it comes with an optical drive and has two Gigabit Ethernet ports for redundancy. With four DIMM slots and four storage bays, this server supports up to 32TB of storage and 32GB of memory.'
+    // });
     await product.save();
     console.log('Saved');
     response.send('Hello');
