@@ -222,22 +222,22 @@ router.get('/hello',async (request,response)=>{
     //     'data':'Are you looking for a low-cost server with huge processing power, extremely good storage options, and high-performance memory that can run mission-critical applications at ease? Dell PowerEdge R730xd rack server is a powerful workhorse that is built with advanced technologies that offer a perfect solution for your most demanding tasks. This industrial grade server is exclusively designed for small and medium businesses, you can customize the server as per your company needs.  Dell R730xd supports DDR3 Memory and a wide range of storage options that make this server suitable for various workloads, including web hosting, email server, etc. Purchase Grade “A” quality Dell PowerEdge R730xd server from Server Basket at an offer price, Server Basket is the only online store in India where you can buy a server at a discounted price. With the best price in India, we also provide free installation assistance, free quote, lightning-fast delivery, and a 1-year warranty.With incredible range of features including highly expandable memory, impressive storage options and the latest Intel Xeon E5-2600 V4 processors, the used Dell PowerEdge R730xd can easily handle the most complex workloads of organization of any size, be it a small and medium business or a large enterprise. It can be used for mid-level medical imaging, High performance computing applications, you can also create powerful virtual environment with this highly scalable server.'
     // });
 
-    const product = new Products({
-        'name':'IBM HS23 (7875IO6) Blade Server',
-        'tagline':"Redefining server-based storage flexibility",
-        'thumbnail':'https://www.cyberwala.com/pub/media/catalog/product/cache/de73c167da32dce9dc7ee8864e42da38/1/8/18928.jpg',
-        'features.first':'RAID is integrated 01 (LS1 SAS 2004)',
-        'features.second':'Outstanding performance',
-        'features.third':'Not cheap',
-        'features.fourth':"A big machine",
-        'specifications.CPU':'Intel Xeon E5 2609(Quad core)',
-        'specifications.Graphics':'Intel HD Graphics P4600',
-        'specifications.RAM':'2 TB',
-        'specifications.Storage':'512 GB',
-        'specifications.Connectivity':'5 x USB 3.0, 2 x Gigabit Ethernet',
-        'specifications.Dimensions':'18 x 1.8″ , 26 x 2.5″, 16 x 3.5″',
-        'data':'IBM HS23 (7875IO6) Blade server supports Intel Xeon E5-2650, Intel Xeon E5-2660, Intel Xeon E5-2430 processors and has maximum server scalable memory 512 GB and maximum storage up to 2 TB, it contains SAS/SATA hard disk controller.The latest model HS23 is packed with new abilities that will help in boosting the clients work. In the new IBM HS23 comes with a standard memory option of 8GB 1600 MHz, 1333 MHz or an 1866 MHz DDR3 VLP RDIMMs. You can choose from Chipkill reliability or from the dual rank that will help in obtaining max work along with your Intel Xeon ™ Processor E5-2600 v2. According to your requirement you can even expand the memory to 512 GB.When it comes to hs23 blade server, we will give outstanding performance, flexible networking and simple management integrated tools one does not want to compromise on quality. The IBM HS23 server is the ideal best buy as the performance is based on the ServerBlade architecture meant for larger business to be able to run efficiently.'
-    });
+    // const product = new Products({
+    //     'name':'IBM HS23 (7875IO6) Blade Server',
+    //     'tagline':"Redefining server-based storage flexibility",
+    //     'thumbnail':'',
+    //     'features.first':'RAID is integrated 01 (LS1 SAS 2004)',
+    //     'features.second':'Outstanding performance',
+    //     'features.third':'Not cheap',
+    //     'features.fourth':"A big machine",
+    //     'specifications.CPU':'Intel Xeon E5 2609(Quad core)',
+    //     'specifications.Graphics':'Intel HD Graphics P4600',
+    //     'specifications.RAM':'2 TB',
+    //     'specifications.Storage':'512 GB',
+    //     'specifications.Connectivity':'5 x USB 3.0, 2 x Gigabit Ethernet',
+    //     'specifications.Dimensions':'18 x 1.8″ , 26 x 2.5″, 16 x 3.5″',
+    //     'data':'IBM HS23 (7875IO6) Blade server supports Intel Xeon E5-2650, Intel Xeon E5-2660, Intel Xeon E5-2430 processors and has maximum server scalable memory 512 GB and maximum storage up to 2 TB, it contains SAS/SATA hard disk controller.The latest model HS23 is packed with new abilities that will help in boosting the clients work. In the new IBM HS23 comes with a standard memory option of 8GB 1600 MHz, 1333 MHz or an 1866 MHz DDR3 VLP RDIMMs. You can choose from Chipkill reliability or from the dual rank that will help in obtaining max work along with your Intel Xeon ™ Processor E5-2600 v2. According to your requirement you can even expand the memory to 512 GB.When it comes to hs23 blade server, we will give outstanding performance, flexible networking and simple management integrated tools one does not want to compromise on quality. The IBM HS23 server is the ideal best buy as the performance is based on the ServerBlade architecture meant for larger business to be able to run efficiently.'
+    // });
     
     await product.save();
     console.log('Saved');
