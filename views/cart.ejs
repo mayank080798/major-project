@@ -70,14 +70,14 @@
         <ul class="list-group">
           <% products.forEach((product)=>{ %>
             <li class="list-group-item">
-              <div class="col-6">
-              <strong><%= product.item.name %></strong>
+              <div class="col-6 text-left" >
+              <strong style="font-size: 3.1vw; "><%= product.item.name %></strong>
               </div>
 
               <div class="col-4 btn-group" style="margin-right: 20px;">
                 <button class="btn btn-purple btn-sm dropdown-toggle mr-4" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action<span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <a href="/user/add/<%=product.item._id%>" class="dropdown-item">Add</a>
+                  <a href="/user/cart/<%=product.item._id%>" class="dropdown-item">Add</a>
                   <div class="dropdown-divider"></div>
                   <a href="/user/reduce/<%=product.item._id%>" class="dropdown-item">Reduce</a>
                   <div class="dropdown-divider"></div>
@@ -104,11 +104,11 @@
     </div>
   </div>
 <%}else{%>
-  <div class="container container-shopping-empty text-center" style="padding: 30vh 0;" >
+  <div class="container container-shopping-empty text-center" style="padding: 25vh 0;" >
     <div class="row ">
       <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
         <h2 class="h2">EMPTY CART</h2>
-        <a href="/"><button class="btn btn-block btn-purple" style="border-radius: 25px; margin-top: 3vh;">FILL IT</button></a>
+        <a href="/"><button class="btn btn-block btn-purple" style="border-radius: 25px; margin-top: 8vh;">FILL IT</button></a>
       </div>
     </div>
   </div>

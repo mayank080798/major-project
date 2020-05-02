@@ -78,6 +78,8 @@ router.get('/cart/:id',ensureAuthenticated,async(request,response)=>{
 
 });
 
+
+
 router.get('/reduce/:id',async(request,response)=>{
     const productId = request.params.id;
     const cart      = new Cart(request.session.cart ? request.session.cart : {}); 
