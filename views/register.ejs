@@ -46,11 +46,11 @@
         <h3 class="black-text mb-5"><strong>SIGN UP</strong></h3>
       </div>
       <%if (message.length > 0){%>
-        <div class="alert  alert-dismissible" role="alert">
-          <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span style="color: purple;" aria-hidden="true">&times;</span></span>
-          <strong style="color: purple;" class="text-purple" ><%= message%></strong>
+        <div class="alert alert-danger " role="alert">
+          <span  class="text-purple" ><%= message%></span>
         </div>
       <%}%>
+
       <div class="md-form check">
         <input type="text" id="name" name="name" class="form-control" autocomplete="off" value="<%= typeof name != 'undefined' ? name : '' %>" />
         <label for="materialFormCardNameEx" class="font-weight-light">Username</label>

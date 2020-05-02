@@ -65,12 +65,12 @@ app.get('/',async (request,response)=>{
     let bucket=0;
     if(request.session.cart)
         bucket =request.session.cart.totalQty > 0 ? request.session.cart.totalQty : 0 ;
-    console.log('bucket:',bucket);
     response.render('home',{
         user:request.user,
         bucket:bucket,
         records:productsHome,
     });
+
     
 });
 

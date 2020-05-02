@@ -49,9 +49,8 @@
         <h3 id="header3" class="black-text mb-5"><strong>LOG IN</strong></h3>
       </div>
       <%if (message.length > 0){%>
-        <div class="alert  alert-dismissible" role="alert">
-          <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span style="color: rgb(212, 97, 97);" aria-hidden="true">&times;</span></span>
-          <strong style="color: rgb(212, 97, 97);" class="text-purple" ><%= message%></strong>
+        <div class="alert alert-danger " role="alert">
+          <span  class="text-purple" ><%= message%></span>
         </div>
       <%}%>
       <div class="md-form check">
