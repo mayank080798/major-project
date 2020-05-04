@@ -2,7 +2,7 @@ const router                = require('express').Router();
 const {ensureAuthenticated} = require('../config/authorization');
 const Products              = require('../models/product');
 router.get('/',async (request,response)=>{
-
+    console.log(process.pid);
     let perPage=3;
     let page=request.params.page || 1;
     
