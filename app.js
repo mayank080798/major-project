@@ -20,16 +20,17 @@ const flash         = require('connect-flash');
 cluster.schedulingPolicy = cluster.SCHED_RR;
 
 let workers         = [];
-if(cluster.isMaster){
+
+const masterProcess=()=>{
     const numWorkers = require('os').cpus().length;
 
-    console.log(`Master cluster setting up ${numWorkers} workers..`);
+    console.log(`Master cluster with id ${process.pid} setting up ${numWorkers} workers..`);
     
     for(var i=0;i<numWorkers;i++){
         workers.push(cluster.fork());
         workers[i].on('message',(message)=>{
-            console.log(message);
-        })
+            // console.log(`Master ${process.id} receives message '${JSON.stringify(message)}' from worker `);
+        });
     }
     cluster.on('online',(worker)=>{
         console.log(`Worker ${worker.process.pid} is online`);
@@ -41,10 +42,24 @@ if(cluster.isMaster){
         workers.push(cluster.fork());
         workers[workers.length-1].on('message',(message)=>{
             console.log(message);
-        })
+        });
     });
-}else{
+}
+const childProcess = ()=>{
+    // console.log(`Worker ${process.pid} started`);
 
+    // process.on('message', function(message) {
+    //     console.log(`Worker ${process.pid} recevies message '${JSON.stringify(message)}'`);
+    // });
+
+    // console.log(`Worker ${process.pid} sends message to master...`);
+    // process.send({ msg: `Message from worker ${process.pid}` });
+
+}
+if(cluster.isMaster){
+    masterProcess();
+}else{
+    childProcess();
     // Set up view engine
     app.use(express.static(__dirname+'/public'));
     app.use(expressLayouts);
