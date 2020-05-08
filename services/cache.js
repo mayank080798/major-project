@@ -4,10 +4,10 @@ const util     = require('util');
 
 const redisURL = 'redis://127.0.0.1:6379' || process.env.REDIS_URL;
 let client;
-if(process.env.REDIS_URL)
-    client = redis.createClient(process.env.REDIS_URL);
-else
-    client = redis.createClient(redisURL);
+// if(process.env.REDIS_URL)
+//     client = redis.createClient(process.env.REDIS_URL);
+// else
+client = redis.createClient(redisURL);
 client.hget     = util.promisify(client.hget);
 const exec = mongoose.Query.prototype.exec;
 
