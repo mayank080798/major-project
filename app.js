@@ -84,7 +84,7 @@ if(cluster.isMaster){
 
     // Initialize passport
     
-    require('./services/cache');
+    //require('./services/cache');
     app.use(passport.initialize());
     app.use(passport.session());
     app.use(function(request,response,next){
@@ -105,7 +105,8 @@ if(cluster.isMaster){
     app.get('/',async (request,response)=>{
         //doWork(5000);
         console.log(process.pid);
-        const products = await Products.find({}).cache({key:1});
+        const products = await Products.find({})
+        //.cache({key:1});
         const productsHome=[];
         products.forEach((product,index)=>{
             if(index<=2)
