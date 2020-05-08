@@ -1,6 +1,6 @@
 const cluster       = require('cluster');
 const express       = require('express');
-const PORT          = process.env.PORT || 3000;
+const PORT          = process.env.PORT || 8080;
 require('./db/mongoose'); 
 const mongoose      = require('mongoose');
 const expressLayouts=require('express-ejs-layouts');
@@ -83,6 +83,8 @@ if(cluster.isMaster){
 
 
     // Initialize passport
+    
+    require('./services/cache');
     app.use(passport.initialize());
     app.use(passport.session());
     app.use(function(request,response,next){
@@ -101,9 +103,9 @@ if(cluster.isMaster){
          while(Date.now()-start < duration){}
     }
     app.get('/',async (request,response)=>{
-        doWork(5000);
+        //doWork(5000);
         console.log(process.pid);
-        const products = await Products.find({});
+        const products = await Products.find({}).cache({key:1});
         const productsHome=[];
         products.forEach((product,index)=>{
             if(index<=2)

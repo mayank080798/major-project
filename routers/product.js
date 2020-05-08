@@ -5,7 +5,6 @@ router.get('/',async (request,response)=>{
     console.log(process.pid);
     let perPage=3;
     let page=request.params.page || 1;
-    
     Products.find({})
         .skip((perPage*page)-perPage)
         .limit(perPage).exec(function(error,data){
@@ -23,8 +22,8 @@ router.get('/',async (request,response)=>{
                     user:request.user,
                     bucket:bucket,
                 });
-            });
-        });
+            })
+        })
 });
 
 
